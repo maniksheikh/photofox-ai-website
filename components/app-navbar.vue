@@ -8,7 +8,7 @@
         </div>
         <div class="flex items-center gap-10">
             <div class="flex flex-wrap justify-center gap-4 sm:gap-6 lg:gap-8">
-                <nuxt-link class="text-[#070127] text-[18px] font-[400]" to="/blogs">Blogs</nuxt-link>
+                <nuxt-link class="text-[#070127] text-[18px] font-[400]" to="">Blogs</nuxt-link>
                 <nuxt-link class="text-[#070127] text-[18px] font-[400]" to="/testimonials">Testimonials</nuxt-link>
                 <nuxt-link class="text-[#070127] text-[18px] font-[400]" to="/faqs">FAQs</nuxt-link>
                 <nuxt-link class="text-[#070127] text-[18px] font-[400]" to="/pricing">Pricing</nuxt-link>
@@ -47,83 +47,14 @@
             <responsive-menu @hide-responsive-menu="isResponsiveMenuVisible = false" />
         </div>
     </div>
-</template>
-
-<script setup>
-import { ref } from "vue";
-import responsiveMenu from "./responsive-menu.vue";
-
-const isResponsiveMenuVisible = ref(false);
-const isUseCaseLinksVisible = ref(false);
-const isProductLinksVisible = ref(false);
-
-const toggleResponsiveMenu = () => {
+  </template>
+  
+  <script setup>
+  import { ref } from "vue";
+  import responsiveMenu from "./responsive-menu.vue";
+  const isResponsiveMenuVisible = ref(false);
+  
+  const toggleResponsiveMenu = () => {
     isResponsiveMenuVisible.value = !isResponsiveMenuVisible.value;
-};
-
-const updateVisibility = (newVisibility) => {
-    isUseCaseLinksVisible.value = newVisibility;
-    isProductLinksVisible.value = newVisibility;
-};
-
-const useCaseLinks = [
-    {
-        text: 'Reimagine Kids\' Art',
-        to: '/kids-art-reimagined',
-        description: 'Transform kids\' art into many styles. Just upload any sketch and see the magic.',
-        image: '/nav/kids-art-reimagined.png',
-        alt: 'Kids Art Reimagined Example',
-        type: 'nuxt-link'
-    },
-    {
-        text: 'Architectural Design',
-        to: '/architectural-design',
-        description: 'Convert any architectural sketch to a realistic images with a single click.',
-        image: '/nav/architectural-design.png',
-        alt: 'Architectural Design Example',
-        type: 'nuxt-link'
-    },
-    {
-        text: 'Interior Design',
-        to: '/interior-design',
-        description: 'Visualise your interior design sketch into a realistic render in seconds.',
-        image: '/nav/interior-design.png',
-        alt: 'Interior Design Example',
-        type: 'nuxt-link'
-    },
-    {
-        text: 'Texture 3D Model/Design',
-        to: '/3d-texturing',
-        description: 'Texture your 3D models in various styles with an ease.',
-        image: '/nav/3d-texturing.png',
-        alt: '3D Texturing Example',
-        type: 'nuxt-link'
-    }
-];
-const productLinks = [
-    {
-        text: "PhotoFox Ai",
-        to: "/",
-        description: "Transform any sketch into image in various styles with a single click.",
-        image: '/nav/sketch-to-image.png',
-        alt: 'PhotoFox Ai Example',
-        type: "nuxt-link",
-    },
-    {
-        text: "Upscale Image",
-        to: "/upscale",
-        description: "Enhance & upscale any image with cutting-edge AI technology.",
-        image: '/nav/upscale-image.png',
-        alt: 'Image Upscaling Example',
-        type: "nuxt-link",
-    },
-    {
-        text: 'Image to Video',
-        to: '/image-to-video',
-        description: 'Animate any image into a video in seconds with latest AI model.',
-        image: '/nav/image-to-video.png',
-        alt: 'Image to Video Example',
-        type: 'nuxt-link'
-    },
-];
-</script>
+  };
+  </script>
